@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,7 +34,7 @@ export class AuthService {
     );
   }
 
-  // método para validar usuario
+  // método para validar - autenticar usuario
   validateUser(nombre: string, contrasena: string): Observable<any> {
     const data = { nombre, contrasena }; 
     return this.http.post(this.validateUrl, data).pipe(
@@ -43,4 +44,6 @@ export class AuthService {
       })
     );
   }
+
+
 }

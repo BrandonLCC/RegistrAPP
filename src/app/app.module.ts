@@ -10,11 +10,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 //Esta importacion tiene que ver con service/api.ts
 import { HttpClientModule } from '@angular/common/http';
 
+//Importacion para las pruebas
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-            HttpClientModule // Esta es la clase para generar http o ayuda a la conexion
+            HttpClientModule // Esta es la clase para generar http o ayuda a la conexion,
+            ,ReactiveFormsModule
 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync()],

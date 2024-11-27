@@ -36,30 +36,51 @@ ion-card-header {
 }
 
 .title-register {
+    position: relative;
     color: #313703;
-    font-size: 32px;
+    font-size: 43px;
     text-align: center;
     text-shadow: none;
+    cursor: default;
+    top: 5px;
 }
 
 .text-p-1 {
     color: #313703;
     text-align: center;
+    cursor: default;
+
 }
 
 ion-card {
     border-radius: 8px;
 }
 
-.input-focus {
-    --border-color: red;
+
+.form-border-focus {
+    border: 1.3px solid rgb(255, 255, 255);
+    animation: border-focus-animation 4s ease 5; 
+}
+
+@keyframes border-focus-animation {
+    0% {
+        border-color: rgb(255, 255, 255);
+    }
+    50% {
+        border-color: red;
+    }
+    100% {
+        border-color: rgb(255, 255, 255);
+    }
 }
 
 .text-p-2 {
     text-align: center;
-    margin-top: 12px;
+    margin-top: 5px;
     color: red;
     cursor: default;
+    min-height: 1.2em; 
+    display: inline-block;
 }
 
 
@@ -89,3 +110,6 @@ ion-card {
     border: none;
     color: #313703;
 }
+
+
+  

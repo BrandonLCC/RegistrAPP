@@ -1,6 +1,7 @@
 //En este servicio se maneja el punto 1 de la evaluacion
 //Guards para asegurar la navegación entre páginas
 import { Injectable } from "@angular/core";
+import { AlertController } from "@ionic/angular";
 
 @Injectable ({
     providedIn: 'root' //Indicando que el servicio "Autenticacion" sera global
@@ -13,7 +14,9 @@ export class AutenticacionService {
     private usuarioLogeado: boolean = false;
     //SI QUIERES ACCEDER A LAS DEMAS PAGINAS SIN HABERTE REGISTRADO DEBES CAMBIARLO A TRUE
 
-    constructor (){}
+    constructor (private alert:AlertController){}
+
+
         //Metodos del usuario logeado
     isLogeado(): boolean {
         return this.usuarioLogeado;

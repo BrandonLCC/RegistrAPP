@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
 
   <div class="div-formulario">
-    <ion-card>
+    <ion-card [ngClass]="{'form-border-focus': !inputValidoPass}">
       <ion-card-header>
         <ion-card-title class="title-register">Ingreso de usuario </ion-card-title>
       </ion-card-header>
@@ -9,29 +9,30 @@
       <img class="logo" src="/assets/img/logo-proyecto.png" alt="mi imagen">
 
       <ion-card-content>
-        <p class="text-p-1">Ingresa tu nombre y una contraseña de minimo 5 digitos.</p>
-        <!-- Campos de informacion  -->
-        <ion-input [(ngModel)]="nombre" label="usuario" label-placement="floating" fill="outline"
-          placeholder="Nombre usuario" maxlength="20" [ngClass]="{'input-focus': !inputValidoName}" slot="end">
-        </ion-input>
+        <form [formGroup]="loginFormulario" (ngSubmit)="gotoSecondPage()">
+          <p class="text-p-1">Si eres nuevo, debes registrarte para iniciar sesión</p>
+          <!-- Campos de informacion  -->
+          <ion-input formControlName="nombre" [(ngModel)]="nombre" label="usuario" label-placement="floating" fill="outline"
+            placeholder="Nombre usuario" maxlength="20" slot="end">
+          </ion-input>
 
-        <br />
+          <br />
 
-        <ion-input [(ngModel)]="contrasena" label="CONTRASEÑA" label-placement="floating" fill="outline"
-          placeholder="Contraseña" maxlength="30" type="password" value="password"
-          [ngClass]="{'input-focus': !inputValidoPass}">
-          <ion-input-password-toggle slot="end"     style="--color: black; --icon-color: black;"></ion-input-password-toggle>
-        </ion-input>
+          <ion-input formControlName="contrasena" [(ngModel)]="contrasena" label="CONTRASEÑA" label-placement="floating" fill="outline"
+            placeholder="Contraseña" maxlength="30" type="password" value="password">
+            <ion-input-password-toggle color="medium" slot="end"></ion-input-password-toggle>
+          </ion-input>
 
-        <!-- Mensaje de validacion -->
-        <p [ngClass]="{'text-validate': !MensajeValidacion}" class="text-p-2">{{ mensaje }}</p>
+          <!-- Mensaje de validacion -->
+          <p class="text-p-2">{{ mensaje || ' ' }}</p>
 
-        <!-- Botones -->
-        <div class="button-page">
-          <ion-button shape="round" expand="full" style="--background: #FFC107 " (click)="gotoSecondPage()">INGRESAR</ion-button>
-          <ion-button shape="round" expand="full" style="--background: #FFC107 " (click)="gotoThirdPage()">RECUPERAR</ion-button>
-          <ion-button shape="round" expand="full" style="--background: black; --color: white;" (click)="gotoregister()">CREAR CUENTA</ion-button>
-        </div>
+          <!-- Botones -->
+          <div class="button-page">
+            <ion-button [disabled]="!loginFormulario.valid" type="ngSubmit" shape="round" expand="full" style="--background: #FFC107 " (click)="gotoSecondPage()">INGRESAR</ion-button>
+            <ion-button shape="round" expand="full" style="--background: #FFC107 " (click)="gotoThirdPage()">RECUPERAR</ion-button>
+            <ion-button shape="round" expand="full" style="--background: black; --color: white;" (click)="gotoregister()">CREAR CUENTA</ion-button>
+          </div>
+        </form>
       </ion-card-content>
     </ion-card>
   </div>
