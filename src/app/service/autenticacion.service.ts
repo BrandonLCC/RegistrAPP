@@ -11,12 +11,13 @@ import { Injectable } from "@angular/core";
 export class AutenticacionService {
     //El usuario no debe estar logeado al iniciar el proyecto
     private usuarioLogeado: boolean = false;
+    //SI QUIERES ACCEDER A LAS DEMAS PAGINAS SIN HABERTE REGISTRADO DEBES CAMBIARLO A TRUE
 
     constructor (){}
         //Metodos del usuario logeado
     isLogeado(): boolean {
         return this.usuarioLogeado;
-    
+     
     }
 
     iniciarSesion(){
@@ -26,7 +27,7 @@ export class AutenticacionService {
     
     cerrarSesion() {
         this.usuarioLogeado = false;
-        
+         
     }
 
     //Luego de crear el servicio de autenticacion se creo

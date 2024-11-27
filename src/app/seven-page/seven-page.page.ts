@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './seven-page.page.html',
   styleUrls: ['./seven-page.page.scss'],
 })
-
+ 
 export class SevenPagePage implements OnInit {
   //Datos de la pagina six
   datosAsistencia: any;
@@ -15,10 +15,14 @@ export class SevenPagePage implements OnInit {
   //Count de ausentes y presentes
   presente: number = 0;
   ausente: number = 0;
-
-  constructor(private router:Router) { }
+  mensaje1 :string= "Datos cargados"
+  mensaje2 :string= "Clase finalizada"
+  constructor(private router:Router, private api:APIService) { }
 
   ngOnInit() {
+
+    this.api.AltertaApi(this.mensaje1);
+
     this.datosAsistencia = history.state.datosAsistencia;
     console.log(this.datosAsistencia)
     
@@ -45,6 +49,11 @@ export class SevenPagePage implements OnInit {
     const porcentajeAsistencia = (this.presente / this.nroClases) * 100;
     return porcentajeAsistencia;
   }
+
+  btnFinalizarClase() {
+    this.api.AltertaApi(this.mensaje2);
+  }
+
 
 }
 

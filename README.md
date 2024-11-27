@@ -15,7 +15,7 @@ Clone el repositorio y luego instala las dependencias
 Clona el repositorio y luego instala las dependencias
 ```bash
 
-git clone NombreRepositorio
+git clone NombreRepositorio 
 
-nmp install
+nmp install #Debes ingresar dentro del acrhivo Con cd y luego ejecutar el codigo
 

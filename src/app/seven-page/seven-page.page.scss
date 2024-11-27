@@ -1,0 +1,58 @@
+ion-content {
+    --background: white;
+  }
+
+  .toolbar-principal {
+    --background: #050b1b;
+    box-shadow: none;
+    color: #ffffff;
+  }
+ 
+  /* CARD */
+  
+  ion-card {
+    --background: #050b1b;;
+  }
+  
+  ion-card-title {
+    color: transparent;
+    background: linear-gradient(to right, #ff9900, #eeff00);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  ion-list {
+    background: white;
+    color: white;
+  }
+  
+  p {
+    color: #ffffff;
+  }
+  
+  ion-checkbox {
+    color: #ffffff;
+  }
+  
+  ion-item {
+    --background: #081127;
+    color: white;
+    margin: 10px;
+    --ion-item-border-color: transparent; /* Elimina las líneas */
+    --ion-item-border-width: 0px; /* Asegura que no haya un borde */
+  }
+  
+  /* botones */
+  .btn-1 {
+    --background: rgb(0, 0, 0);
+    color: #ffffff;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .btn-2 {
+    --background: linear-gradient(to right, #ff8000, #ffc000);
+    color: #000000;
+    margin-left: 10px;
+    margin-right: 10px;
+  }

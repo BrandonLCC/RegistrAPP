@@ -61,7 +61,7 @@ export class APIService {
 
       buttons: [
         {
-          text: 'Acpetar',
+          text: 'Aceptar',
           handler: () => {
             console.log('ok');
           },

@@ -1,43 +1,76 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>five-page</ion-title>
+  <ion-toolbar class="toolbar-principal" >
+    <ion-title>Materia seleccionada</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button  expand="full" [routerLink]="['/second-page']">Volver atras</ion-button>
+  <!-- Materia seleccionada de la pagina 4 -->
+  <ion-card>
+    <ion-card-header>
+      <img
+        class="img-materia"
+        alt="Silhouette of mountains"
+        src="{{ cursoSeleccionado.imagenMateria}}"
+      />
+
+      <ion-card-subtitle class="titulo"
+        >Materia: {{ cursoSeleccionado.materia }}</ion-card-subtitle
+      >
+      <ion-card-subtitle class="subtitulo-1"
+        >Sección: {{ cursoSeleccionado.seccion }}</ion-card-subtitle
+      >
+      <ion-card-subtitle class="subtitulo-2"
+        >Sigla: {{ cursoSeleccionado.sigla }}</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content class="desc-materia">
+      {{ cursoSeleccionado.DescripcionMateria }}
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Boton volver -->
+  <ion-button
+    expand="full"
+    class="btn-volver"
+    [routerLink]="['/fourth-page']"
+    >Volver atras</ion-button
+  >
 
   <ion-card>
-
     <ion-card-header>
-      <ion-card-title>Tomar asistencia</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title class="titulo-asistenica">Tomar asistencia</ion-card-title>
+      
     </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  
-    <ion-button fill="clear" [routerLink]="['/inicio']">Asistencia QR</ion-button>
-    <ion-button fill="clear" [routerLink]="['/six-page']">Asitencia Manual</ion-button>
+    
+
+    <ion-card-content class="subtitulo-3">
+      
+En esta sección, se registra la asistencia de los estudiantes de la materia que seleccionaste previamente.    </ion-card-content>
+    <div class="div-bottones">
+    <ion-button class="btn-1"  [routerLink]="['/inicio']">
+      <ion-icon slot="start" name="qr-code-outline"></ion-icon> Genere un código
+      QR</ion-button
+    >
+    <ion-button class="btn-2" [routerLink]="['/six-page']">
+      <ion-icon slot="start" name="people-outline"></ion-icon> Asitencia
+      Manual</ion-button
+    >
+    </div>
   </ion-card>
-  <p>pag 5  mostrar las asistencia de  los alumnos </p>
-<ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ver asistencia</ion-card-title>
+      <ion-card-subtitle>Ver los alumnos con asistencia</ion-card-subtitle>
+    </ion-card-header>
 
-  <ion-card-header>
-    <ion-card-title>Ver asistencia</ion-card-title>
-    <ion-card-subtitle>Ver los alumnos con asistencia</ion-card-subtitle>
-  </ion-card-header>
+    <ion-card-content>
+      Después de tomar la asistencia de la clase, puedes revisar el registro de asistencia de los alumnos.    </ion-card-content>
 
-  <ion-card-content>
-    Here's a small text description for the card content. Nothing more, nothing less.
-  </ion-card-content>
-
-  <ion-button fill="clear" [routerLink]="['/seven-page']">Peligro asistencia</ion-button>
-  <ion-button fill="clear" [routerLink]="['/seven-page']">Ver asistencia alumnos</ion-button>
-  <p>pag 5 en esta seccion debe ir detalle alumno eliminar alumno editar alumno</p>
-  <p>nota alumno asistencia alumno mensaje alumno</p>
-</ion-card>
-
-
+      <ion-button class="btn-3" expand="full" [routerLink]="['/seven-page']">
+        <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+        Ver asistencia Alumnos
+      </ion-button>
+      
+  </ion-card>
 </ion-content>

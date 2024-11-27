@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AutenticacionService } from '../service/autenticacion.service';
 @Component({
   selector: 'app-second-page',
   templateUrl: './second-page.page.html',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class SecondPagePage implements OnInit {
   username: string = ''; // Declara la propiedad username
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AutenticacionService) { }
 
 
   ngOnInit() {

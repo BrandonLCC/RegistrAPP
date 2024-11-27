@@ -1,83 +1,83 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service'; 
 import { AutenticacionService } from '../service/autenticacion.service';
 @Component({
   selector: 'app-first-page',
   templateUrl: './first-page.page.html',
   styleUrls: ['./first-page.page.scss'],
 })
-
 export class FirstPagePage implements OnInit {
-  username: string = ''; // Declara la propiedad username
-  password: string = ''; // Declaro la propiedad password
-  inputValidoName: boolean = true; //Esto ayudara para saber que input no cumple con la validacion
-  inputValidoPass: boolean = true; //Esto ayudara para saber que input no cumple con la validacion
+  nombre: string = ''; // Declaro la propiedad username
+  contrasena: string = ''; // Declaro la propiedad password
+  inputValidoName: boolean = true; // Esto ayudará para saber qué input no cumple con la validación
+  inputValidoPass: boolean = true; // Esto ayudará para saber qué input no cumple con la validación
   MensajeValidacion: boolean = true;
-  mensaje: string = ''; //Mensaje de la etiqueta p
-  //Uso de la variable para Guard
+  mensaje: string = ''; // Mensaje de la etiqueta p
   logueado: boolean = false;
-  constructor(private router: Router, 
-              private alertController: AlertController, 
-              private auten: AutenticacionService) { }
 
-  iniciarSesion() {
-    this.auten.iniciarSesion
-    this.logueado = true;
-    this.router.navigate(['/second-page'])
-    
-  }
+  constructor(private router: Router,
+              private alertController: AlertController,
+              private authService: AuthService, 
+              private aut:AutenticacionService) { } 
 
-  ngOnInit() {
+  ngOnInit() {}
 
-  }
   ionViewDidLeave() {
     this.mensaje = '';
     console.log("Limpiando datos al cambiar de pagina");
-    this.inputValidoName = true
-    this.inputValidoPass = true
+    this.inputValidoName = true;
+    this.inputValidoPass = true;
   }
 
-  //array de caracteres de mayusculas y minusculas
+  // Array de caracteres de mayúsculas y minúsculas
   DatosValidos = /^[A-Za-z]+$/;
 
   gotoSecondPage() {
-    //Usamos la funcion test para la restriccion de caracteres especiales, sus estado devuelve true o false.
-    this.inputValidoName = this.DatosValidos.test(this.username);
-    
-    // Navegar a la segunda página con el nombre de usuario
-    //Aplicamos una condicion para que los datos ingresados sean correctos
-    if (this.inputValidoName && this.username.length >= 5 && this.password.length >= 10) {
-      this.router.navigateByUrl('/second-page', { state: { username: this.username } });
-      this.inputValidoName = true;
-    } 
-    else if (this.username.length < 5) {
-      console.log(this.username.length);
-      this.mensaje = 'El nombre ingresado no es valido.';
-      this.inputValidoName = this.username.length > 5;
-    } 
-    else if (!this.inputValidoName) {
+    // Usamos la función test para la restricción de caracteres especiales
+    this.inputValidoName = this.DatosValidos.test(this.nombre);
+
+    // Aplicamos una condición para que los datos ingresados sean correctos
+    if (this.inputValidoName && this.nombre.length >= 5 && this.contrasena.length >= 5) {
+      // Validar usuario en la base de datos
+      this.authService.validateUser(this.nombre, this.contrasena).subscribe(
+        response => {
+           //Aqui utilizamos la autorizacion para los usuarios logueados
+           this.aut.iniciarSesion();
+          // Si la validación es exitosa, navegar a la segunda página
+          this.router.navigate(['/second-page'], { state: { username: this.nombre } });
+         
+        },
+        error => {
+          // Manejar error, mostrando un mensaje
+          this.mensaje = 'El usuario o la contraseña son incorrectos. Por favor intenta de nuevo.';
+          this.MensajeValidacion = false; // Mostrar mensaje de validación
+        }
+      );
+    } else if (this.nombre.length < 5) {
+      this.mensaje = 'El nombre ingresado no es válido.';
+      this.inputValidoName = false; // Cambia a false para mostrar el mensaje de error
+    } else if (!this.inputValidoName) {
       this.mensaje = 'No se permiten caracteres especiales.';
-    } 
-    else if (this.password.length < 10) {
-      console.log(this.password.length);
+    } else if (this.nombre.length < 5) {
       this.mensaje = 'La contraseña es demasiado corta o no ha sido ingresada.';
-      this.inputValidoPass = this.password.length > 10;
-    } 
-    else {
-      console.log("error");
+      this.inputValidoPass = false; // Cambia a false para mostrar el mensaje de error
+    } else {
       this.mensaje = 'Error en la validación.';
     }
-  
   }
 
-   // Navegación a ThirdPage
-   gotoThirdPage() {
-    this.inputValidoName = this.DatosValidos.test(this.username);
-    this.router.navigateByUrl('/third-page', { state: { username: this.username } });
+  // Navegación a ThirdPage
+  gotoThirdPage() {
+    this.inputValidoName = this.DatosValidos.test(this.nombre);
+    this.router.navigateByUrl('/third-page', { state: { username: this.nombre } });
 
-    } 
-  
+  }
 
-
+  // Este método se ejecuta al hacer clic en el botón
+  gotoregister() {
+    console.log('correcto');
+    this.router.navigateByUrl('/register');  
+  }
 }

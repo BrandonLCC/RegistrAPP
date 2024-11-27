@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Asistencia de los alumnos</ion-title>
+  <ion-toolbar class="toolbar-principal">
+    <ion-title>Datos Alumnos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,9 +9,7 @@
 <!--CARD DE AUSENTES -->
   <ion-list>
     <ion-card *ngFor="let alumno of datosAsistencia.ausentes">
-      <ion-card-header>
-        <ion-card-title>{{ alumno.name.first }} {{ alumno.name.last }}</ion-card-title>
-      </ion-card-header>
+     
       
       <!--Cuerpo de la tarjeta ausentes -->
       <ion-card-content>
@@ -20,10 +18,11 @@
             <img [src]="alumno.picture.thumbnail" alt="{{ alumno.name.first }}">
           </ion-thumbnail>
           <ion-label>
+            <ion-card-title>{{ alumno.name.first }} {{ alumno.name.last }}</ion-card-title>
             <p>Ultima clase: Ausente</p>
             <p>Asistencia {{ alumno.asistencias  || 0  }}</p>
             <p>Nº de Clases Registradas: {{ nroClases }}</p>
-            <p>Porcentaje de asistencia: {{ calculoAsistencia() }}%</p>
+           <!-- <p>Porcentaje de asistencia: {{ calculoAsistencia() }}%</p>-->
           </ion-label>
         </ion-item>
       </ion-card-content>
@@ -32,9 +31,6 @@
   <!--CARD DE LOS PRESENTES -->
   <ion-list>
     <ion-card *ngFor="let alumno of datosAsistencia.presentes">
-      <ion-card-header>
-        <ion-card-title>{{ alumno.name.first }} {{ alumno.name.last }}</ion-card-title>
-      </ion-card-header>
       
       <!--Cuerpo de la tarjeta de los presentes -->
       <ion-card-content>
@@ -43,18 +39,19 @@
             <img [src]="alumno.picture.thumbnail" alt="{{ alumno.name.first }}">
           </ion-thumbnail>
           <ion-label>
+            <ion-card-title>{{ alumno.name.first }} {{ alumno.name.last }}</ion-card-title>
             <p>Ultima clase: Presente</p>
             <p>Asistencia {{ presente }}</p>
             <p>Nº de Clases Registradas: {{ nroClases }}</p>
-            <p>Porcentaje de asistencia: {{ calculoAsistencia() }}%</p>
+           <!-- <p>Porcentaje de asistencia: {{ calculoAsistencia() }}%</p>-->
           </ion-label>
         </ion-item>
       </ion-card-content>
     </ion-card>
   </ion-list>
-  <ion-button  expand="full" [routerLink]="['/six-page']">Volver a la pagina de asistencia</ion-button>
+  <ion-button class="btn-1"  expand="full" [routerLink]="['/six-page']">Volver a la pagina de asistencia</ion-button>
   <!-- colocar alert de asistencia tomada -->
-  <ion-button  expand="full" [routerLink]="['/five-page']">Finalizar clase</ion-button>
+  <ion-button class="btn-2" (click)="btnFinalizarClase()" expand="full" [routerLink]="['/five-page']">Finalizar clase</ion-button>
 
 
 

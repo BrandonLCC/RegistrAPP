@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { IonModal, AlertController } from '@ionic/angular';
+import { OverlayEventDetail } from '@ionic/core/components';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-third-page',
@@ -8,64 +10,93 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./third-page.page.scss'],
 })
 export class ThirdPagePage implements OnInit {
-  username: string = '';
-  mensaje: string = '';
-  inputExtractName: string ='';
+  @ViewChild(IonModal) modal!: IonModal;
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  mensaje: string = 'Este modal permite recuperar la contraseña.';
+  inputExtractName: string = '';
+  correo: string = '';
+  nuevaContrasena: string = '';
+  confirmarContrasena: string = '';
+  usuarioValido: boolean = false;
+
+  constructor(
+    private router: Router,
+    private alertController: AlertController,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
-      // Acceder al estado pasado desde la primera página
-      const navigation = this.router.getCurrentNavigation();
-      if (navigation && navigation.extras.state) {
-        this.username = navigation.extras.state['username'];
-      }
-  } 
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation && navigation.extras.state) {
+      this.inputExtractName = navigation.extras.state['nombre'];
+    }
+  }
 
-  //Si da errores al ingresar datos en la tercera pagina, eliminar esto
-  //Esto lo que hace es borrar el nombre y mensaje cuado cambiamos de pagina
   ionViewDidLeave() {
     this.mensaje = '';
     console.log("Mensaje borrado al cambiar de pagina");
-
   }
 
-  // Función para redirigir a la página de ingreso de usuario y mostrar ventana emergente con mensaje 
-  // agregar condicional IF a futuro
   async recoverPassword() {
-    //Simulacion de condicion ya que tiene un problema
-    if ( this.inputExtractName === this.username && this.username.length > 0) {
-    const alert = await this.alertController.create({
-      header: '¡Excelente!',
-      subHeader: 'Se a enviado un codigo de verificacion a tu correo',
-               //Para simular que recuperamos la cotraseña se puede mostrar aqui
-
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-        },
-        {
-          text: 'Okay',
-          handler: () => {
-            console.log('Alert confirmed');
-            this.router.navigateByUrl('/first-page'); // Redirige a la página de ingreso  
-          },
-        },
-      ],
-    });
-
-    await alert.present();
-  }
-  
-  else {
-    this.mensaje='El usuario que has ingresado no existe, porfavor vuelve a intentarlo'
-
+    // Verifica si el nombre de usuario y el correo coinciden
+    if (this.inputExtractName && this.correo === this.inputExtractName + '@ejemplo.com') {
+      this.usuarioValido = true;
+      this.mensaje = 'Usuario encontrado. Ingresa la nueva contraseña.';
+    } else {
+      this.mensaje = 'El usuario o correo no coinciden. Por favor intenta nuevamente.';
+    }
   }
 
+  async resetPassword() {
+    if (!this.nuevaContrasena || !this.confirmarContrasena) {
+      this.mensaje = 'Todos los campos son obligatorios.';
+      return;
+    }
+
+    if (this.nuevaContrasena !== this.confirmarContrasena) {
+      this.mensaje = 'Las contraseñas no coinciden. Por favor, inténtalo nuevamente.';
+      return;
+    }
+
+    this.authService.resetUserPassword(this.inputExtractName, this.correo, this.nuevaContrasena).subscribe(
+      async response => {
+        console.log('Contraseña restablecida:', response);
+        const alert = await this.alertController.create({
+          header: 'Éxito',
+          message: 'La contraseña ha sido restablecida exitosamente.',
+          buttons: ['OK']
+        });
+        await alert.present();
+        this.router.navigateByUrl('/first-page');
+      },
+      async error => {
+        console.error('Error al restablecer la contraseña:', error);
+        const alert = await this.alertController.create({
+          header: 'Error',
+          message: 'Hubo un problema al restablecer la contraseña. Inténtalo de nuevo.',
+          buttons: ['OK']
+        });
+        await alert.present();
+      }
+    );
   }
-  // Función para volver a la página anterior
+
+  cancel() {
+    this.modal.dismiss(null, 'cancel');
+  }
+
+  confirm() {
+    this.modal.dismiss(this.nuevaContrasena, 'confirm');
+  }
+
+  onWillDismiss(event: Event) {
+    const ev = event as CustomEvent<OverlayEventDetail<string>>;
+    if (ev.detail.role === 'confirm') {
+      this.mensaje = `Contraseña actualizada para el usuario ${this.inputExtractName}.`;
+    }
+  }
+
   goBack() {
-    this.router.navigateByUrl('/first-page');  // Redirige a first-page
+    this.router.navigateByUrl('/first-page');
   }
 }

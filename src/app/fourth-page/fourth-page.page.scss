@@ -1,0 +1,150 @@
+
+ion-content {
+  --background: white;
+}
+
+.HERO-materia {
+  background-color: #01040c;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 30px;
+  height: 250px;
+}
+
+ 
+.img-hero {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  border-radius: 10px;
+  object-fit: cover; 
+}
+
+.titulo-h1 {
+background-color: #ffffff;
+  position: absolute;
+  color: transparent;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  top: 65px;
+  font-size: 50px;
+  font-weight: 900;
+  left: 20px;
+  text-align: center;
+}
+
+.subtitulo-h6-1 {
+    position: absolute;
+    font-weight: bolder;
+    top: 50px;
+    left: 20px;
+    color: rgb(0, 0, 0); 
+}
+
+.subtitulo-h6-2 {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    color: #ff9900;
+    font-size: 19px;
+    font-weight: 400;    
+}
+
+.card-usuario-materia {
+  margin-bottom: 20px;
+  border-radius: 10px 0px 10px 0px;
+}
+
+.text-p-bienvenida-user {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.p-cantidad-materias {
+  color: #ff9900;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* CARD */
+
+ion-card {
+  --background: #01040c;
+}
+.img-materia {
+  width: 100%;
+  height: 150px;
+  margin: 0;
+  border-radius: 10px;
+}
+.img-materia-filter-blur {
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+  height: 185px;
+  width: 100%;
+  filter: blur(20px);
+}
+
+.titulo {
+  top: 20px;
+  color: transparent;
+  background: linear-gradient(to right, #ff9900,#ffd557);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.subtitulo-1 {
+    top: 20px;
+
+  color: white;
+}
+
+.subtitulo-2 {
+    top: 20px;
+
+    color: white;
+}
+
+.desc-materia {
+    top: 10px;
+    color: white;
+}
+
+.div-bottones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.button-1 {
+  --background: linear-gradient(to right, #ff8000, #ffc000);
+  color: #000000;
+}
+
+.button-2 {
+  --background: rgb(255, 255, 255);
+  color: #000000;
+}
+
+ion-icon {
+    color: #000000;
+}
+
+
+
+.icon3 {
+  color: rgb(0, 0, 0);
+}
+
+ion-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}

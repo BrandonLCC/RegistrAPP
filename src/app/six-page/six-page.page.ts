@@ -11,7 +11,7 @@ export class SixPagePage implements OnInit {
   mensaje: string = ""; //Para mostrar mensajes
   //CheckBox asitencia 
   estaPresente: boolean = false;
-
+  cursoSeleccionado: any;
   //Constructor para acceder a las funciones get del API
   constructor(private api: APIService, private router:Router) { }
 
@@ -40,7 +40,8 @@ export class SixPagePage implements OnInit {
 
     //servicio de la api de cambio de asistencia
     this.api.asisntenciaEstudiantes    
-
+    this.cursoSeleccionado = this.router.getCurrentNavigation()?.extras.state;
+    console.log(this.cursoSeleccionado)
   }
 
   marcarAsistencia(user: any, estado: string) {
