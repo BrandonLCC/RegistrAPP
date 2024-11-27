@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar-principal">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/first-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ThirdPage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">ThirdPage</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card> 
+    <ion-card-header class="card-header">
+      <ion-card-title  class="titulo">Recuperar Contraseña</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="texto-p-1">Ingresa tu nombre de usuario </p>
+      <!-- Campos de información -->
+      <ion-input
+        label="USUARIO"
+        label-placement="floating"
+        fill="outline"
+        placeholder="ExampleUser"
+        maxlength="20"
+        [(ngModel)]="inputExtractName"
+        >
+      </ion-input> 
+
+        <p class="texto-p-1">Correo electrónico </p>
+        <!-- Campos de información -->
+        <ion-input
+          label="CORREO ELECTRONICO"
+          label-placement="floating"
+          fill="outline"
+          placeholder="ExampleUser@gmail.com"
+        
+          >
+        </ion-input> 
+      <!--Mensaje que muestra si el usuario se encontro o no existe -->
+      <p> {{ mensaje }}</p>
+      <!-- Botón Recuperar -->
+      <ion-button class="boton-recuperar" (click)="recoverPassword()" expand="full" shape="round">Recuperar</ion-button>
+
+      <!-- Botón Volver -->
+      <ion-button  class="boton-volver"(click)="goBack()" expand="full" shape="round">
+        <ion-icon name="arrow-back"></ion-icon>
+        Volver 
+      </ion-button> 
+     
+    </ion-card-content>
+  </ion-card>
+</ion-content>
