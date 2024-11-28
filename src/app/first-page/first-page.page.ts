@@ -63,11 +63,13 @@ gotoSecondPage() {
           this.router.navigate(['/second-page'], { state: { username: this.nombre } });
           this.mensaje = response ? 'Inicio de sesión exitoso' : 'Usuario o la contraseña incorrectas. Intente nuevamente.';
           this.inputValidoPass = !response; 
+          
 
       },
       error => {
         this.mensaje = "Nombre o contraseña incorrecta. Intente nuevamente.";
-        
+        this.inputValidoPass = false; 
+
       });
     }
 }

@@ -21,6 +21,6 @@ export class FivePagePage implements OnInit {
     console.log("Limpiando datos al cambiar de pagina");
   }
 
-
+ 
 
 }

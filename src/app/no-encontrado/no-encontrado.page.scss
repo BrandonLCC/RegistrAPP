@@ -33,3 +33,10 @@ ion-content {
     padding: 0;
     margin: 0;
 }
+
+ion-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  

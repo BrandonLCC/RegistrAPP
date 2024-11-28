@@ -13,7 +13,7 @@ ion-content {
   ion-card {
     --background: #050b1b;;
   }
-  
+   
   ion-card-title {
     color: transparent;
     background: linear-gradient(to right, #ff9900, #eeff00);
@@ -38,8 +38,17 @@ ion-content {
     --background: #081127;
     color: white;
     margin: 10px;
-    --ion-item-border-color: transparent; /* Elimina las líneas */
-    --ion-item-border-width: 0px; /* Asegura que no haya un borde */
+    --ion-item-border-color: transparent; 
+    --ion-item-border-width: 0px; 
+    border-radius: 10px;
+  }
+
+.diseño-ausente {
+  border: 1.5px solid #ff4d4d;
+
+}
+  .diseño-presente {
+    border: 1.5px solid #4dff4d;
   }
   
   /* botones */
@@ -56,3 +65,4 @@ ion-content {
     margin-left: 10px;
     margin-right: 10px;
   }
+  

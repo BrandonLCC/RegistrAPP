@@ -5,7 +5,7 @@
 /*  border-radius: 20px; */
 
 ion-content {
-  --background: #ffffff;
+  --background:  #e0e0e0;
 }
 
 .toolbar-principal {
@@ -17,15 +17,18 @@ ion-content {
 /* Seccion Principal */
 
 .img-perfil-profesor {
-  width: 140px;
-  height: 140px;
+  background-color: #ffc000;
+  margin-top: 50px;
+  width: 120px;
+  height: 120px;
   border-radius: 100%;
 }
+
 
 .div-titulo {
   /*cuerpo del div*/
   position: relative;
-  background: #030b1f;
+  background: #01040c;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   /*Para centrar imagen profesor*/
@@ -56,7 +59,7 @@ ion-content {
 
 .icon-perfil-profesor {
     position: relative;
-    margin-right: 3px; /* Espacio entre el ícono y el texto */
+    margin-right: 3px; 
     top: 2px;
 }
 
@@ -107,7 +110,6 @@ ion-content {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
-  box-shadow: 0px 0px 10px 1px #ffc51657;
 }
 
 /*Seccion del curso */
@@ -117,7 +119,7 @@ ion-content {
 
 .ion-card-materias {
   position: relative;
-  background-color: #050b1b;
+  background-color: #01040c;
   text-align: center;
   padding-bottom: 5px;
   margin-top: 10px;

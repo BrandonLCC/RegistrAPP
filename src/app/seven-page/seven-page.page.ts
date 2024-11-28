@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
   templateUrl: './seven-page.page.html',
   styleUrls: ['./seven-page.page.scss'],
 })
- 
 export class SevenPagePage implements OnInit {
   //Datos de la pagina six
   datosAsistencia: any;
@@ -15,33 +14,40 @@ export class SevenPagePage implements OnInit {
   //Count de ausentes y presentes
   presente: number = 0;
   ausente: number = 0;
-  mensaje1 :string= "Datos cargados"
-  mensaje2 :string= "Clase finalizada"
-  constructor(private router:Router, private api:APIService) { }
+  mensaje1: string = 'Datos cargados';
+  mensaje2: string = 'Clase finalizada';
+  constructor(private router: Router, private api: APIService) {}
 
   ngOnInit() {
-
     this.api.AltertaApi(this.mensaje1);
 
-    this.datosAsistencia = history.state.datosAsistencia;
-    console.log(this.datosAsistencia)
-    
-    //Obtenemos el array de los presentes: como objetivo es obtener todas las asistencias 
-    //Luego recorrer las asistencias por los presentes y acumularlos
-
-    const alumno = this.datosAsistencia.presentes
-    console.log("mostrando de los presentes", alumno)
-      if (this.datosAsistencia.estaPresente = true) {
-          this.presente += 1;
-          console.log("presente if",this.presente);
-
+    // obtenemos datos de los asitencia (localstorage)
+    const savedDatosAsistencia = localStorage.getItem('datosAsistencia');
+    if (history.state.datosAsistencia) {
+      this.datosAsistencia = history.state.datosAsistencia;
+      localStorage.setItem(
+        'datosAsistencia',
+        JSON.stringify(this.datosAsistencia)
+      );
+    } else {
+      const savedDatosAsistencia = localStorage.getItem('datosAsistencia');
+      if (savedDatosAsistencia) {
+        this.datosAsistencia = JSON.parse(savedDatosAsistencia);
       }
-      
-      else if (!this.datosAsistencia.estaPresente) {
-          this.ausente += 1;
-          console.log("ausente else",this.ausente);
-      }
-     
+    }
+
+    console.log(this.datosAsistencia);
+
+    const alumno = this.datosAsistencia.presentes;
+    console.log('mostrando de los presentes', alumno);
+
+    if (this.datosAsistencia.estaPresente) {
+      this.presente += 1;
+      console.log('presente if', this.presente);
+    } else {
+      this.ausente += 1;
+      console.log('ausente else', this.ausente);
+    }
   }
 
   //No terminado
@@ -52,9 +58,6 @@ export class SevenPagePage implements OnInit {
 
   btnFinalizarClase() {
     this.api.AltertaApi(this.mensaje2);
+    localStorage.removeItem('datosAsistencia'); // funcion limpiar datosss
   }
-
-
 }
-
-

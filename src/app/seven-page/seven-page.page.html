@@ -10,10 +10,10 @@
   <ion-list>
     <ion-card *ngFor="let alumno of datosAsistencia.ausentes">
      
-      
+       
       <!--Cuerpo de la tarjeta ausentes -->
       <ion-card-content>
-        <ion-item>
+        <ion-item class="diseño-ausente">
           <ion-thumbnail slot="start">
             <img [src]="alumno.picture.thumbnail" alt="{{ alumno.name.first }}">
           </ion-thumbnail>
@@ -30,11 +30,11 @@
   </ion-list>
   <!--CARD DE LOS PRESENTES -->
   <ion-list>
-    <ion-card *ngFor="let alumno of datosAsistencia.presentes">
+    <ion-card  *ngFor="let alumno of datosAsistencia.presentes">
       
       <!--Cuerpo de la tarjeta de los presentes -->
-      <ion-card-content>
-        <ion-item>
+      <ion-card-content  >
+        <ion-item class="diseño-presente">
           <ion-thumbnail slot="start">
             <img [src]="alumno.picture.thumbnail" alt="{{ alumno.name.first }}">
           </ion-thumbnail>

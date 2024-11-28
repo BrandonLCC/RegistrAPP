@@ -86,7 +86,7 @@ tomarAsistencia() {
     lenghtAusentes: cantidadAusentes,
     lenghtPresentes: cantidadPresentes,
 
-  }
+  } 
 
   //Por ahora es ROUTER pero deberia ser services o Base de datos para matener todas las asistencias de los alumnos
   this.router.navigate(["/seven-page"], { state: { datosAsistencia:datosAsistencia } })

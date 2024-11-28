@@ -6,9 +6,22 @@ ion-content {
   --background: #050b1b;
   box-shadow: none;
   color: #ffffff;
+  text-align: center;
+  padding: 20px;
 }
-/* CARD */
 
+.div-materia-seleccionada {
+  background-color: #050b1b;
+  margin: 0;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}
+
+/* CARD */
+ 
 ion-card {
   --background: #050b1b;
 }
@@ -35,21 +48,24 @@ ion-card {
 
 .subtitulo-2 {
   top: 20px;
-
+text-align: center;
   color: white;
 }
 
 .desc-materia {
   top: 10px;
   color: white;
+  text-align: center;
 }
 
 /*Cards-2*/
 .titulo-asistenica {
-
+  text-align: center;
+color: white;
 }
 .subtitulo-3 {
   color: white;
+  text-align: center;
 }
 
 ion-card-header {
@@ -58,12 +74,18 @@ ion-card-header {
   justify-content: space-between;
 }
 
+/*card 3 */
+.titulo-ver-asistencia ,.sub-ver-asistencia,.contenido-ver-asistencia {
+  color: white;
+  text-align: center;
+}
 
+ 
 .btn-volver {
+  position: relative;
   --background: linear-gradient(to right, #ff8000, #ffc000);
   color: #000000;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin:20px
 }
 
 .div-bottones {

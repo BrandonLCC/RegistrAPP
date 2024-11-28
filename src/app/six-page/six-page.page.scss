@@ -54,9 +54,13 @@ ion-item {
   --background: #081127;
   color: white;
   margin: 10px;
-  --ion-item-border-color: transparent; /* Elimina las líneas */
-  --ion-item-border-width: 0px; /* Asegura que no haya un borde */
+  --ion-item-border-color: transparent; 
+  --ion-item-border-width: 0px; 
+  border-radius: 10px;
+
 }
+
+
 
 .check-ausente {
   --checkbox-background: #ffb8b8;

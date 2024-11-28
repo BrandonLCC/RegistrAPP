@@ -1,14 +1,12 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="toolbar-principal" >
-    <ion-title>Materia seleccionada</ion-title>
-  </ion-toolbar>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <!-- Materia seleccionada de la pagina 4 -->
-  <ion-card>
+  <div class="div-materia-seleccionada">
     <ion-card-header>
-      <img
+      <img 
         class="img-materia"
         alt="Silhouette of mountains"
         src="{{ cursoSeleccionado.imagenMateria}}"
@@ -27,7 +25,7 @@
     <ion-card-content class="desc-materia">
       {{ cursoSeleccionado.DescripcionMateria }}
     </ion-card-content>
-  </ion-card>
+  </div>
 
   <!-- Boton volver -->
   <ion-button
@@ -60,11 +58,11 @@ En esta sección, se registra la asistencia de los estudiantes de la materia que
   </ion-card>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Ver asistencia</ion-card-title>
-      <ion-card-subtitle>Ver los alumnos con asistencia</ion-card-subtitle>
+      <ion-card-title class="titulo-ver-asistencia">Ver asistencia</ion-card-title>
+      <ion-card-subtitle class="sub-ver-asistencia">Ver los alumnos con asistencia</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-card-content>
+    <ion-card-content class="contenido-ver-asistencia">
       Después de tomar la asistencia de la clase, puedes revisar el registro de asistencia de los alumnos.    </ion-card-content>
 
       <ion-button class="btn-3" expand="full" [routerLink]="['/seven-page']">
