@@ -24,6 +24,7 @@ ion-content {
  
 ion-card {
   --background: #050b1b;
+  margin-top: 20px;
 }
 .img-materia {
   width: 100%;
@@ -85,7 +86,8 @@ ion-card-header {
   position: relative;
   --background: linear-gradient(to right, #ff8000, #ffc000);
   color: #000000;
-  margin:20px
+  margin:20px;
+
 }
 
 .div-bottones {
