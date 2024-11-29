@@ -16,8 +16,7 @@ import { AuthService } from '../services/auth.service';
 export class FirstPagePage implements OnInit {
   loginFormulario: FormGroup; //Formulario 
   mensaje: string = ''; //Mensaje de error o exito 
-
-  nombre: string = ''; // Declaro la propiedad username
+  correo: string = ''; // Declaro la propiedad username
   contrasena: string = ''; // Declaro la propiedad password
   inputValidoPass: boolean = true; //El focus del login
   logueado: boolean = false; //Si los datos exiten, permitira acceder al sistema
@@ -31,51 +30,58 @@ export class FirstPagePage implements OnInit {
   //Inicializar el formulario 
   this.loginFormulario = this.formBuilder.group({
   //Required: Requerido o que es obligatorio
-  nombre: ['', Validators.required], 
+  correo: ['', Validators.required],
   contrasena: ['', Validators.required], 
 
   });
 
   } 
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   ionViewDidLeave() {
     console.log("Limpiando datos al cambiar de pagina");
     this.inputValidoPass = true; 
-    this.nombre = '';
+    this.correo = '';
     this.contrasena = '';
     this.mensaje = '';
 
   }
 
+
    //El metodo que se ejecuta al presionar el boton iniciar sesion
-gotoSecondPage() {
-  const {nombre, contrasena}=this.loginFormulario.value
-  
-    if (this.authService.validateUser(nombre,contrasena)){
+  gotoSecondPage() {
+  const {correo, contrasena}=this.loginFormulario.value
     // Validar usuario en la base de datos
-    this.authService.validateUser(this.nombre, this.contrasena).subscribe(
+    this.authService.validateUser(this.correo , this.contrasena).subscribe(
       response => {
-          //Aqui utilizamos la autorizacion para los usuarios logueados
+        //Aqui utilizamos la autorizacion para los usuarios logueados
           this.aut.iniciarSesion();
         // Si la validación es exitosa, navegar a la segunda página
-          this.router.navigate(['/second-page'], { state: { username: this.nombre } });
-          this.mensaje = response ? 'Inicio de sesión exitoso' : 'Usuario o la contraseña incorrectas. Intente nuevamente.';
-          this.inputValidoPass = !response; 
-          
+        this.mensaje = 'Inicio de sesión exitoso como profesor';
 
+        //cendsWith  si una cadena de texto (string) termina en 
+        if (correo.endsWith('@profesor.com')) {
+          this.router.navigate(['/second-page'], { state: { correo: this.correo} });
+
+        } else if (correo.endsWith('@duocuc.cl')) {
+          this.router.navigate(['/pagina-alumno-1'], { state: { correo: this.correo } });
+
+        } 
+          
       },
       error => {
         this.mensaje = "Nombre o contraseña incorrecta. Intente nuevamente.";
         this.inputValidoPass = false; 
 
       });
-    }
-}
+    
+} 
   // Navegación a la tercera pagina 
   gotoThirdPage() {
-    this.router.navigateByUrl('/third-page', { state: { username: this.nombre } });
+    this.router.navigateByUrl('/third-page', { state: { correo: this.correo } });
 
   }
 

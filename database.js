@@ -72,12 +72,12 @@ app.post('/api/reset-password', (req, res) => {
 
 // ruta para validar usuario
 app.post('/api/validate-user', (req, res) => {
-    const { nombre, contrasena } = req.body; // Obtener nombre y contraseña de la solicitud
+    const { correo, contrasena } = req.body; // Obtener correo y contraseña de la solicitud
 
     // Consulta para verificar las credenciales del usuario
     pool.query(
-        `SELECT * FROM usuarioo WHERE nombre = ? AND contrasena = ?`,
-        [nombre, contrasena],
+        `SELECT * FROM usuarioo WHERE correo = ? AND contrasena = ?`,
+        [correo, contrasena],
         (err, results) => {
             if (err) {
                 console.error('Error al validar el usuario:', err);

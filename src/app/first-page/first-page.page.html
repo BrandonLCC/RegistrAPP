@@ -12,8 +12,8 @@
         <form [formGroup]="loginFormulario" (ngSubmit)="gotoSecondPage()">
           <p class="text-p-1">Si eres nuevo, debes registrarte para iniciar sesión</p>
           <!-- Campos de informacion  -->
-          <ion-input formControlName="nombre" [(ngModel)]="nombre" label="usuario" label-placement="floating" fill="outline"
-            placeholder="Nombre usuario" maxlength="20" slot="end">
+          <ion-input formControlName="correo" [(ngModel)]="correo" label="usuario" label-placement="floating" fill="outline"
+            placeholder="Coreeo usuario" maxlength="20" slot="end">
           </ion-input>
 
           <br />

@@ -7,7 +7,7 @@ import { AutenticacionService } from '../service/autenticacion.service';
   styleUrls: ['./second-page.page.scss'],
 })
 export class SecondPagePage implements OnInit {
-  username: string = ''; // Declara la propiedad username
+  correo: string = ''; // Declara la propiedad username
   constructor(private router: Router, private auth: AutenticacionService) { }
 
 
@@ -15,7 +15,7 @@ export class SecondPagePage implements OnInit {
     // Acceder al estado pasado desde la primera página
     const navigation = this.router.getCurrentNavigation();
     if (navigation && navigation.extras.state) {
-      this.username = navigation.extras.state['username'];
+      this.correo = navigation.extras.state['correo'];
     }
   }
 

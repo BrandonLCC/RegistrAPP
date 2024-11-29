@@ -36,8 +36,8 @@ export class AuthService {
   }
 
   // método para validar - autenticar usuario
-  validateUser(nombre: string, contrasena: string): Observable<any> {
-    const data = { nombre, contrasena }; 
+  validateUser(correo: string, contrasena: string): Observable<any> {
+    const data = { correo, contrasena }; 
     return this.http.post(this.validateUrl, data).pipe(
       catchError(err => {
         console.error('Error al validar el usuario:', err);

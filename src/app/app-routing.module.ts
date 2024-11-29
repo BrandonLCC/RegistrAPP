@@ -49,9 +49,18 @@ const routes: Routes = [
       m => m.RegisterPageModule)
   },
   {
+    path: 'pagina-alumno-1',
+    loadChildren: () => import('./alumno/pagina-alumno-1/pagina-alumno-1.module').then( m => m.PaginaAlumno1PageModule)
+  },
+  {
+    path: 'pagina-alumno-2',
+    loadChildren: () => import('./alumno/pagina-alumno-2/pagina-alumno-2.module').then( m => m.PaginaAlumno2PageModule)
+  },
+  {
     path: '**',//asi un usuario intenta ingresar a cualquier ruta llevara a esta pagina
     loadChildren: () => import('./no-encontrado/no-encontrado.module').then(m => m.NoEncontradoPageModule)
   },
+  
 
 
 
