@@ -7,7 +7,7 @@
 - (3)  Realizar Clone al repositorio y luego instala las dependencias (Ver los pasos al final)
 - (4). Ejecutar el proyecto con: ionic serve
 - (5). Ejecutar el archivo en una terminal aparte (PowerShell) utilizando este comando: node database.js para activar la base de datos
-- (5.1) Resultado para activar la BD: PS C:\Users\brand\Desktop\Proyectos\Proyectos Apps moviles\Repositorio-RegistrAPP\RegistrAPP> node database.js
+- (5.1) Resultado abtenido al ejecutar el comando: PS C:\Users\brand\Desktop\Proyectos\Proyectos Apps moviles\Repositorio-RegistrAPP\RegistrAPP> node database.js
                                           Servidor en ejecución en http://localhost:3000
 
 
@@ -23,6 +23,6 @@ Clona el repositorio y luego instala las dependencias
 
 git clone NombreRepositorio 
 
-nmp install #Debes ingresar dentro del acrhivo Con cd y luego ejecutar el codigo```
+nmp install #Debes ingresar dentro del acrhivo Con CD y luego ejecutar el codigo```
 
 
