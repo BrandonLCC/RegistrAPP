@@ -19,3 +19,4 @@ git clone NombreRepositorio
 
 nmp install #Debes ingresar dentro del acrhivo Con cd y luego ejecutar el codigo
 
+<img width="947" alt="testing" src="https://github.com/user-attachments/assets/76b0ad6d-300d-41bd-88ac-1485dd3ac2ba">
