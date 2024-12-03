@@ -11,7 +11,6 @@ export class AuthService {
   private apiUrl = 'http://localhost:3000/api/usuarioo'; 
   private validateUrl = 'http://localhost:3000/api/validate-user'; // URL para validar usuario
   private resetUrl = 'http://localhost:3000/api/reset-password';
-  private urlCurso = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
 
@@ -46,9 +45,9 @@ export class AuthService {
     );
   }
 
-  obtenerCurso(idUsuarioo: number): Observable<any> {
-    const params = new HttpParams().set('usuario_id', idUsuarioo.toString());
-    return this.http.get('http://localhost:3000/curso', { params });
+  obtenerCursosProfesor(idUsuario: number) {
+    return this.http.get<{ cursos: any[] }>(`http://localhost:3000/api/ProfesorCurso/${idUsuario}`);
   }
+  
   
 }

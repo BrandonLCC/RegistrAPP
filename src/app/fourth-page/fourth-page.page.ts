@@ -1,7 +1,7 @@
 
 import { Component, OnInit, viewChild, viewChildren } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-fourth-page',
   templateUrl: './fourth-page.page.html',
@@ -10,50 +10,30 @@ import { Router, RouterLink } from '@angular/router';
 export class FourthPagePage implements OnInit {
   lenghtCursos: number=0;
 
-  constructor(private router:Router) {}
-  seccion: string[] = ['001-D', '002-V', '005-D','008-D'];
-  materias: string[] = ['Programación Movil', 'Arquitectura', 'Matematica II','Portafolio'];
-  sigla: string[] = ['PGY-4121', 'ASY-4131', 'MAT-4131','PORT-3210'];
-  DescripcionMateria: string[] = ['Programación utilizando ionic, angular y otras aplicaciónes',
-                                   'Creación de proyectos utilizando arquitecturas y atributos de calidad',
-                                    'Resolución de problemas matematicos con excel',
-                                    'Aqui se realiza las actividades de portafolio.'];
+  constructor(private router:Router, private authService:AuthService) {}
 
-  imagenMateria: string[] = [
-    '../assets/img/programacion.png', 
-    '../assets/img/arquitectura.webp', 
-    '../assets/img/matematica.jpg',
-    '../assets/img/portafolio.jpg'
-  ];
-  profesor: string = 'NOMBRE';
-
-  cursos = this.materias.map((materia, index) => ({
-    materia: materia,
-    materias: materia,
-    seccion: this.seccion[index],
-    sigla: this.sigla[index],
-    imagenMateria: this.imagenMateria[index],
-    profesor: this.profesor,
-    DescripcionMateria: this.DescripcionMateria[index]
-  }));
+  idUsuario: number = 1;  // Ejemplo: id del profesor (puede ser obtenido dinámicamente)
+  cursos: any[] = [];
 
   ngOnInit() {
-    this.lenghtCursos = this.cursos.length
-    console.log(this.lenghtCursos)
-
+ 
+    this.authService.obtenerCursosProfesor(this.idUsuario)
+    .subscribe(response => {
+      this.cursos = response.cursos;
+    }, error => {
+      console.error(error);
+    });
   }
 
   
 
   irPagina5ConDatos (curso: any){
-    this.router.navigateByUrl('/five-page', {state: { materia:curso.materias,
-                                                      seccion:curso.seccion, 
-                                                      sigla: curso.sigla,
-                                                      profesor: curso.profesor,
-                                                      DescripcionMateria: curso.DescripcionMateria,
-                                                      imagenMateria: curso.imagenMateria
-                                                    }})
+    this.router.navigate(['/five-page'], {
+      state: {
+        cursoSeleccionado: curso,
+      },
+    });
   }
 
-
 }
+

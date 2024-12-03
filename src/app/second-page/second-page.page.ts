@@ -7,10 +7,10 @@ import { AutenticacionService } from '../service/autenticacion.service';
   styleUrls: ['./second-page.page.scss'],
 })
 export class SecondPagePage implements OnInit {
-  correo: string = ''; // Declara la propiedad username
+  correo: string = ''; // Declara la propiedad correo
   constructor(private router: Router, private auth: AutenticacionService) { }
 
-
+  
   ngOnInit() {
     // Acceder al estado pasado desde la primera página
     const navigation = this.router.getCurrentNavigation();

@@ -4,26 +4,26 @@
 
 <ion-content [fullscreen]="true">
   <!-- Materia seleccionada de la pagina 4 -->
-  <div class="div-materia-seleccionada">
-    <ion-card-header>
-      <img 
-        class="img-materia"
-        alt="Silhouette of mountains"
-        src="{{ cursoSeleccionado.imagenMateria}}"
-      />
+  <ion-header [translucent]="true"></ion-header>
 
-      <ion-card-subtitle class="titulo"
-        >Materia: {{ cursoSeleccionado.materia }}</ion-card-subtitle
-      >
-      <ion-card-subtitle class="subtitulo-1"
-        >Sección: {{ cursoSeleccionado.seccion }}</ion-card-subtitle
-      >
-      <ion-card-subtitle class="subtitulo-2"
-        >Sigla: {{ cursoSeleccionado.sigla }}</ion-card-subtitle
-      >
+<ion-content [fullscreen]="true">
+  <!-- Materia seleccionada de la pagina 4 -->
+  <div class="div-materia-seleccionada">
+    <ion-card-header> 
+      <img *ngIf="cursoSeleccionado?.imagenCurso" class="img-materia" [src]="cursoSeleccionado?.imagenCurso" />
+
+      <ion-card-subtitle class="titulo">
+        Materia: {{ cursoSeleccionado?.nombreCurso }}
+      </ion-card-subtitle>
+      <ion-card-subtitle class="subtitulo-1">
+        Sección: {{ cursoSeleccionado?.seccion }}
+      </ion-card-subtitle>
+      <ion-card-subtitle class="subtitulo-2">
+        Sigla: {{ cursoSeleccionado?.sigla }}
+      </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content class="desc-materia">
-      {{ cursoSeleccionado.DescripcionMateria }}
+      {{ cursoSeleccionado?.DescripcionCurso }}
     </ion-card-content>
   </div>
 
@@ -31,9 +31,13 @@
   <ion-button
     expand="full"
     class="btn-volver"
-    [routerLink]="['/fourth-page']"
-    >Volver atras</ion-button
-  >
+    [routerLink]="['/fourth-page']">
+    Volver atrás
+  </ion-button>
+
+  <!-- Otros contenidos relacionados con el curso -->
+</ion-content>
+
 
   <ion-card>
     <ion-card-header>

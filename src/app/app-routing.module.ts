@@ -50,18 +50,27 @@ const routes: Routes = [
   },
   {
     path: 'pagina-alumno-1',
-    loadChildren: () => import('./alumno/pagina-alumno-1/pagina-alumno-1.module').then( m => m.PaginaAlumno1PageModule)
+    loadChildren: () => import('./alumno/pagina-alumno-1/pagina-alumno-1.module').then(
+       m => m.PaginaAlumno1PageModule),canActivate:[AutenticacionGuard]
   },
   {
     path: 'pagina-alumno-2',
-    loadChildren: () => import('./alumno/pagina-alumno-2/pagina-alumno-2.module').then( m => m.PaginaAlumno2PageModule)
+    loadChildren: () => import('./alumno/pagina-alumno-2/pagina-alumno-2.module').then(
+       m => m.PaginaAlumno2PageModule),canActivate:[AutenticacionGuard]
+  },
+ 
+  {
+    path: 'pagina-alumno-3',
+    loadChildren: () => import('./alumno/pagina-alumno-3/pagina-alumno-3.module').then( 
+      m => m.PaginaAlumno3PageModule),canActivate:[AutenticacionGuard]
   },
   {
     path: '**',//asi un usuario intenta ingresar a cualquier ruta llevara a esta pagina
-    loadChildren: () => import('./no-encontrado/no-encontrado.module').then(m => m.NoEncontradoPageModule)
+    loadChildren: () => import('./no-encontrado/no-encontrado.module').then(
+      m => m.NoEncontradoPageModule)
   },
-  
 
+  
 
 
 

@@ -1,19 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SecondPagePage } from './second-page.page';
+import { PaginaAlumno3Page } from './pagina-alumno-3.page';
 
-describe('SecondPagePage', () => {
-  let component: SecondPagePage;
-  let fixture: ComponentFixture<SecondPagePage>;
+describe('PaginaAlumno3Page', () => {
+  let component: PaginaAlumno3Page;
+  let fixture: ComponentFixture<PaginaAlumno3Page>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SecondPagePage);
+    fixture = TestBed.createComponent(PaginaAlumno3Page);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-
-    
   });
 });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-five-page',
   templateUrl: './five-page.page.html',
@@ -8,19 +9,17 @@ import { Router } from '@angular/router';
 export class FivePagePage implements OnInit {
   cursoSeleccionado: any;
 
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.cursoSeleccionado = this.router.getCurrentNavigation()?.extras.state;
-
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation?.extras.state) {
+      this.cursoSeleccionado = navigation.extras.state['cursoSeleccionado'];
+    }
   }
-//Se llama justo antes de dejar una página. Podemos utilizar este evento para desactivar listeners, etc.
+
   ionViewDidLeave() {
     this.cursoSeleccionado = null;
-    console.log("Limpiando datos al cambiar de pagina");
+    console.log('Limpiando datos al cambiar de página');
   }
-
- 
-
 }

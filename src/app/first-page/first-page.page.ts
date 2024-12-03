@@ -64,6 +64,7 @@ export class FirstPagePage implements OnInit {
 
         //cendsWith  si una cadena de texto (string) termina en 
         if (correo.endsWith('@profesor.com')) {
+          
           this.router.navigate(['/second-page'], { state: { correo: this.correo} });
 
         } else if (correo.endsWith('@duocuc.cl')) {

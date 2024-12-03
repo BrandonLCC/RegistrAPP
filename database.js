@@ -96,6 +96,35 @@ app.post('/api/validate-user', (req, res) => {
 });
 
 
+//Creacion de materias para profesores  
+app.get('/api/ProfesorCurso/:id_usuario', (req, res) => {
+    const { id_usuario } = req.params;
+    console.log('ID Usuario recibido:', id_usuario); // Esto te ayudará a verificar que el id_usuario es correcto.
+
+    // Consulta para obtener los cursos asignados al profesor
+    pool.query(
+        `SELECT c.id_curso, c.nombreCurso, c.sigla, c.DescripcionCurso, c.imagenCurso
+        FROM sys.curso c
+        JOIN sys.ProfesorCurso pc ON c.id_curso = pc.id_curso
+        WHERE pc.id_usuario = ?`, [id_usuario], (err, results) => {
+            if (err) {
+                console.error('Error al obtener los cursos del profesor:', err);
+                return res.status(500).json({ error: 'Error al obtener los cursos del profesor', detalles: err });
+            }
+
+            if (results.length === 0) {
+                console.log('No se encontraron cursos para el profesor con ID:', id_usuario);
+                return res.status(404).json({ message: 'No se encontraron cursos para este profesor' });
+            }
+
+            // Devolver los cursos asignados al profesor
+            res.status(200).json({ cursos: results });
+        }
+    );
+});
+
+
+
 
 // Escuchar en el puerto 3000
 const PORT = 3000;
