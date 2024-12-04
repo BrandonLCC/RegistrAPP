@@ -10,13 +10,12 @@
 - (5.1) Resultado abtenido al ejecutar el comando: PS C:\Users\brand\Desktop\Proyectos\Proyectos Apps moviles\Repositorio-RegistrAPP\RegistrAPP> node database.js
                                           Servidor en ejecución en http://localhost:3000
 
-![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
 
 
 
 #Resultados del testeo con jasmin y karma.
+![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
 
-![Uploading jasmin.png…]()
 
 Clona el repositorio y luego instala las dependencias
 --(3) Realizar Clone al repositorio y luego instala las dependencias: 
