@@ -15,7 +15,6 @@
 
 #Resultados del testeo con jasmin y karma.
 
-<img width="947" alt="testing" src="https://github.com/user-attachments/assets/76b0ad6d-300d-41bd-88ac-1485dd3ac2ba">
 
 Clona el repositorio y luego instala las dependencias
 --(3) Realizar Clone al repositorio y luego instala las dependencias: 
