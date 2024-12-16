@@ -51,5 +51,7 @@ npx cap sync #Sincroniza los cambios
 #Genera APK de acuerdo con los estándares de testing
 #Resultados del testeo con jasmin y karma.
 ![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
+<img width="524" alt="evidencia <img width="527" alt="testeo evidencia 2" src="https://github.com/user-attachments/assets/d8379cd5-cb4d-47b5-b5c8-a80080cce1f9" />
+testeo" src="https://github.com/user-attachments/assets/4518ee1e-b2e3-4eb5-862b-6623df30d55b" />
 
 #Firma de la aplicación
