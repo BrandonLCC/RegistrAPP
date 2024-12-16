@@ -23,7 +23,7 @@ Remove-Item -Path .\package-lock.json -Force
 npm install  #Instalar dependencias
 npx cap sync #Sincroniza los cambios 
 ```
--
+--
 #Librerias del proyecto
 -(1). Para instalar la liberia sebes ejecutar este comando en el CMD: ```npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
 -    
