@@ -27,19 +27,21 @@ npx cap sync #Sincroniza los cambios
 ```
 #Librerias del proyecto
 (1). Para instalar la liberia sebes ejecutar este comando en el CMD: ```bash npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
-     -
-     -
-     -
+     ---
+     ---
+     ---
      La libreria llamada "barcode-scanning" sirve para el escaneo de QR y codigos de barras. Esta libreria esta vinculada con un archivo 
      llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar escaneo, salir escaneo, diseños y activar linterna entre            otras funciones. Esta libreria se encuentra ubicada en la page: pagina-alumno-3.
-     
+     ---
+     ---
+     ---
 (2). ```bash npm install --save-dev @types/capacitor-camera```
      La libreria llamada "capacitor-camera" Nos permite acceder a la camara de los dispositivos moviles.
-     -
-     -
-     -
+     ---
+     ---
+     ---
      PD: Probablemente pueda dar errores de dependencias o vulnerabilidades por lo que debes seguir el paso 3 para instalar el proyecto correctamente.
-
+    
 #Evidencia del consumo de API 
 
 
