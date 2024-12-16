@@ -11,18 +11,43 @@
                                           Servidor en ejecución en http://localhost:3000
 
 
-
-
-#Resultados del testeo con jasmin y karma.
-![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
-
-
 Clona el repositorio y luego instala las dependencias
 --(3) Realizar Clone al repositorio y luego instala las dependencias: 
 ```bash
 
-git clone NombreRepositorio 
+git clone NombreRepositorio o src
 
-nmp install #Debes ingresar dentro del acrhivo Con CD y luego ejecutar el codigo```
+Remove-Item -Path .\node_modules -Recurse -Force #Eliminar estos archivos obligadamente  
+Remove-Item -Path .\package-lock.json -Force 
+
+npm install  #Instalar dependencias
+npx cap sync #Sincroniza los cambios
 
 
+```
+#Librerias del proyecto
+(1). Para instalar la liberia sebes ejecutar este comando en el CMD: ```bash npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
+     -
+     -
+     -
+     La libreria llamada "barcode-scanning" sirve para el escaneo de QR y codigos de barras. Esta libreria esta vinculada con un archivo 
+     llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar escaneo, salir escaneo, diseños y activar linterna entre            otras funciones. Esta libreria se encuentra ubicada en la page: pagina-alumno-3.
+     
+(2). ```bash npm install --save-dev @types/capacitor-camera```
+     La libreria llamada "capacitor-camera" Nos permite acceder a la camara de los dispositivos moviles.
+     -
+     -
+     -
+     PD: Probablemente pueda dar errores de dependencias o vulnerabilidades por lo que debes seguir el paso 3 para instalar el proyecto correctamente.
+
+#Evidencia del consumo de API 
+
+
+#Evidencia de la integración del plugin
+
+
+#Genera APK de acuerdo con los estándares de testing
+#Resultados del testeo con jasmin y karma.
+![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
+
+#Firma de la aplicación
