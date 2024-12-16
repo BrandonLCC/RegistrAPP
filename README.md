@@ -26,7 +26,7 @@ npx cap sync #Sincroniza los cambios
 
 ```
 #Librerias del proyecto
-(1). Para instalar la liberia sebes ejecutar este comando en el CMD: ```bash npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
+(1). Para instalar la liberia sebes ejecutar este comando en el CMD: ```npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
      ---
      ---
      ---
@@ -35,7 +35,7 @@ npx cap sync #Sincroniza los cambios
      ---
      ---
      ---
-(2). ```bash npm install --save-dev @types/capacitor-camera```
+(2). ```npm install --save-dev @types/capacitor-camera```
      La libreria llamada "capacitor-camera" Nos permite acceder a la camara de los dispositivos moviles.
      ---
      ---
