@@ -52,12 +52,17 @@ npx cap sync #Sincroniza los cambios
 #Testeo con jasmin y karma.
 
 ##Pasos para realizar los testeos
-(1).
-(2).
+(1). Identidicar los componentes a los realizaremos un testeo como por ejemplo: Inicio de sesion o Registro de usuario
+(2). Realizaremos testeos desde un servicio como por ejemplo: auth.service.spec.ts para...
+(img)
+(3). Luego iremos al componente o funcionalidad del sistema al cual queremos testear, el archivo debe ser spec.ts
+![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
+
+(4).
+
+(7). Como ultimo paso ejecutaremos en el terminal de visual Estudio el comando: ``` node testing  ``` y esperaremos los resultados obtenidos del testeo.
+##Resultado con jasmin y karma.
 <img width="524" alt="evidencia <img width="527" alt="testeo evidencia 2" src="https://github.com/user-attachments/assets/d8379cd5-cb4d-47b5-b5c8-a80080cce1f9" />
 
-
-##Resultado con jasmin y karma.
-![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
 
 #Firma de la aplicación
