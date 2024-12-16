@@ -11,7 +11,7 @@
                                           Servidor en ejecución en http://localhost:3000
 
 
--Clona el repositorio y luego instala las dependencias
+Clona el repositorio y luego instala las dependencias
 --(3) Realizar Clone al repositorio y luego instala las dependencias: 
 
 ```bash
@@ -23,21 +23,21 @@ Remove-Item -Path .\package-lock.json -Force
 npm install  #Instalar dependencias
 npx cap sync #Sincroniza los cambios 
 ```
---
+
 #Librerias del proyecto
 -(1). Para instalar la liberia sebes ejecutar este comando en el CMD: ```npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
--    
--     La libreria llamada "barcode-scanning" sirve para el escaneo de QR y codigos de barras. Esta libreria esta vinculada con un archivo 
--    llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar escaneo, salir escaneo, diseños y activar linterna entre       -     otras funciones. Esta libreria se encuentra ubicada en la page: pagina-alumno-3.
--     
+    
+     La libreria llamada "barcode-scanning" sirve para el escaneo de QR y codigos de barras. Esta libreria esta vinculada con un archivo 
+    llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar escaneo, salir escaneo, diseños y activar linterna entre            otras funciones. Esta libreria se encuentra ubicada en la page: pagina-alumno-3.
+     
 -(2). ```npm install --save-dev @types/capacitor-camera```
--     La libreria llamada "capacitor-camera" Nos permite acceder a la camara de los dispositivos moviles.
--    
--     PD: Probablemente pueda dar errores de dependencias o vulnerabilidades por lo que debes seguir el paso 3 para instalar el proyecto correctamente.
--    
+     La libreria llamada "capacitor-camera" Nos permite acceder a la camara de los dispositivos moviles.
+    
+     PD: Probablemente pueda dar errores de dependencias o vulnerabilidades por lo que debes seguir el paso 3 para instalar el proyecto correctamente.
+    
 #Evidencia del consumo de API 
--
--
+
+
 #Evidencia de la integración del plugin
 
 
@@ -57,5 +57,5 @@ npx cap sync #Sincroniza los cambios
 -(7). Como ultimo paso ejecutaremos en el terminal de visual Estudio el comando: ``` node testing  ``` y esperaremos los resultados obtenidos del testeo.
 ##Resultado con jasmin y karma.
 ![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
--
+
 #Firma de la aplicación
