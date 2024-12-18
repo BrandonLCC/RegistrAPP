@@ -76,9 +76,17 @@ npx cap sync #Sincroniza los cambios
   
   <img width="400" alt="evidencia de plugin 3" src="https://github.com/user-attachments/assets/e0dd0cb5-f2bb-4263-ad0a-7877ceeb64e7" />
 
+  Resultado final
+  
+  <img width="167" alt="evidencia qr 1" src="https://github.com/user-attachments/assets/79eed791-ee96-4080-9a6a-ea460309423a" />
+
+  <img width="164" alt="evidenica qr 2" src="https://github.com/user-attachments/assets/ae317032-a588-4fa1-9e10-3d0a930410e5" />
+
+
 # Genera APK de acuerdo con los estándares de testing con jasmin y karma.
 
 ## Pasos para realizar los testeos
+
 - Identidicar los componentes a los realizaremos un testeo como por ejemplo: Inicio de sesion o Registro de usuario
 
 - Realizaremos 
