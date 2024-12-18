@@ -7,18 +7,18 @@
 - (3)  Realizar git clone al repositorio y luego instala las dependencias
   
 ```bash
-git clone https://github.com/BrandonLCC/RegistrAPP.git o  descarga del src
+git clone https://github.com/BrandonLCC/RegistrAPP.git o descarga del src
 
 npm install  #Instalar dependencias
 
 #Importaciónes necesarias
-npm install @capacitor-mlkit/barcode-scanning@next o npm install --save-dev @types/capacitor-mlkit-barcode-scanning
+npm install @capacitor-mlkit/barcode-scanning@next 
 npm install --save-dev @types/capacitor-camera
 
-#Forzar cambios en caso de fallo
-Remove-Item -Path .\node_modules -Recurse -Force #Eliminar estos archivos obligadamente  
-Remove-Item -Path .\package-lock.json -Force 
+#Importaciones en caso de error
+npm install --save-dev @types/capacitor-mlkit-barcode-scanning
 
+npm audit fix
 npx cap sync #Sincroniza los cambios 
 ```
   
@@ -62,6 +62,12 @@ npx cap sync #Sincroniza los cambios
   
 - Se instalo la importación  ``` npm install @capacitor-mlkit/barcode-scanning@next ```
 - Y luego sincronizamos los cambios ``` npx ionic cap sync  ```
+
+- evidencia dentro del proyecto
+  <img width="400" alt="evidencia plugin " src="https://github.com/user-attachments/assets/808ca613-0a93-429a-8ba0-36f004088beb" />
+  <img width="400" alt="evidencia plugin 2" src="https://github.com/user-attachments/assets/1c15b53a-0958-4cd1-b798-17208e7c779f" />
+  <img width="400" alt="evidencia de plugin 3" src="https://github.com/user-attachments/assets/e0dd0cb5-f2bb-4263-ad0a-7877ceeb64e7" />
+
 
 # Genera APK de acuerdo con los estándares de testing
 
