@@ -17,6 +17,7 @@ npm install --save-dev @types/capacitor-camera
 
 #Importaciones en caso de error
 npm install --save-dev @types/capacitor-mlkit-barcode-scanning
+npm install @capacitor-mlkit/barcode-scanning@next
 
 npm audit fix
 npx cap sync #Sincroniza los cambios 
@@ -27,7 +28,7 @@ npx cap sync #Sincroniza los cambios
 - Resultado obtenido:  ``` node database.js Servidor en ejecución en http://localhost:3000 ``` 
 
 # Librerias del proyecto
-- (1). Para instalar la libreria se ejecuto este comando dentro del visual estudio: ```  npm install @capacitor-mlkit/barcode-scanning@next ```
+- (1). Para instalar la libreria se ejecuto este comando dentro del visual estudio: ``` npm install --save-dev @types/capacitor-camera ```
     
     La libreria llamada "barcode-scanning" sirve para el escaneo de QR y codigos de barras. Esta libreria esta vinculada con un archivo 
     llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar el escaneo, salir del escaneo, diseños y activación de  linterna entre otras funciones.
@@ -93,7 +94,14 @@ Las funciónes del pagina-alumno-3.page.ts integrados al HTML
 
 
 # Genera APK de acuerdo con los estándares de testing con jasmin y karma.
+- Evidencia de creación del apk
+  
+<img width="208" alt="apk 1" src="https://github.com/user-attachments/assets/634153da-1abd-40c0-9300-47a9dbeacbaa" />
 
+<img width="251" alt="apk 2" src="https://github.com/user-attachments/assets/21e48cfb-29c0-4460-93a1-a33318a1349f" />
+
+<img width="250" alt="apk 3" src="https://github.com/user-attachments/assets/a0e8e26d-2c63-4b3d-b70e-773ca2d875a6" />
+  
 ## Pasos para realizar los testeos
 
 - Se utiliza un servicio para realizar testeos ingresando datos validos y no validos esperando el resultado esperado, en este caso en el archivo auth.service.spec.ts
@@ -121,3 +129,6 @@ Las funciónes del pagina-alumno-3.page.ts integrados al HTML
 - Ubicación del archivo generado
   
 <img width="122" alt="firma apk" src="https://github.com/user-attachments/assets/f93fb677-6555-44da-84a1-cbb759870c86" />
+
+
+
