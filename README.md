@@ -47,10 +47,11 @@ npx cap sync #Sincroniza los cambios
 
   <img width="418" alt="Evidencia randomUser 1" src="https://github.com/user-attachments/assets/49ccbf5b-ae1a-4717-b9c2-7a9d1de9a448" />
 
-  <img width="461" alt="funcion asinc" src<img width="461" alt="funcion asinc" src="https://github.com/user-attachments/assets/821b8eab-785b-422e-9599-bf67bacd814b" />
+  <img width="461" alt="funcion asinc" src="https://github.com/user-attachments/assets/821b8eab-785b-422e-9599-bf67bacd814b" />
 
 ## Manejo de  las respuestas de manera estructurada y eficiente.
 
+<img width="481" alt="state de la api" src="https://github.com/user-attachments/assets/3b4fbffc-9e3c-4794-8399-0396ace3633e" />
 
 # Evidencia de la integración del plugin Escaneo de código QR
 
@@ -64,28 +65,38 @@ npx cap sync #Sincroniza los cambios
 - Y luego sincronizamos los cambios ``` npx ionic cap sync  ```
 
 ## Evidencia del plugin dentro del proyecto
+
+  El archivo barcode-scanning-modal.component.ts es un modal que podemos   descargar y implementar en el proyecto
   
   <img width="400" alt="evidencia plugin " src="https://github.com/user-attachments/assets/808ca613-0a93-429a-8ba0-36f004088beb" />
-##
+
   <img width="400" alt="evidencia plugin 2" src="https://github.com/user-attachments/assets/1c15b53a-0958-4cd1-b798-17208e7c779f" />
+
+  Aqui encontramos la comunicación entre las funcionalidades de la página pagina-alumno-3.page.ts y el archivo barcode-scanning-modal.component.ts para utilizarlo con el HTML
   
   <img width="400" alt="evidencia de plugin 3" src="https://github.com/user-attachments/assets/e0dd0cb5-f2bb-4263-ad0a-7877ceeb64e7" />
 
-# Genera APK de acuerdo con los estándares de testing
-
-# Testeo con jasmin y karma.
+# Genera APK de acuerdo con los estándares de testing con jasmin y karma.
 
 ## Pasos para realizar los testeos
-- (1). Identidicar los componentes a los realizaremos un testeo como por ejemplo: Inicio de sesion o Registro de usuario
-- (2). Realizaremos testeos desd<img width="481" alt="state de la api" src="https://github.com/user-attachments/assets/3b4fbffc-9e3c-4794-8399-0396ace3633e" />
-e un servicio como por ejemplo: auth.service.spec.ts para...
-- (img)
+- Identidicar los componentes a los realizaremos un testeo como por ejemplo: Inicio de sesion o Registro de usuario
+
+- Realizaremos 
+
 - (3). Luego iremos al componente o funcionalidad del sistema al cual queremos testear, el archivo debe ser spec.ts
 
 - (4).
 
 - (7). Como ultimo paso ejecutaremos en el terminal de visual Estudio el comando: ``` node testing  ``` y esperaremos los resultados obtenidos del testeo.
-##Resultado con jasmin y karma.
+  
+##Resultado final
+
 ![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
 
 # Firma de la aplicación
+
+- Firma el APK utilizando los comandos correspondientes: ``` keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias  ```
+
+- Ubicación del archivo generado
+  
+<img width="122" alt="firma apk" src="https://github.com/user-    attachments/assets/0350727f-c2cb-4997-ac7c-951e391eed32" />
