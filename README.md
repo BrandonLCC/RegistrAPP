@@ -27,10 +27,10 @@ npx cap sync #Sincroniza los cambios
 - Resultado obtenido:  ``` node database.js Servidor en ejecución en http://localhost:3000 ``` 
 
 # Librerias del proyecto
-- (1). Para instalar la liberia sebes ejecutar este comando dentro del visual estudio: ```  npm install @capacitor-mlkit/barcode-scanning@next ```
+- (1). Para instalar la libreria se ejecuto este comando dentro del visual estudio: ```  npm install @capacitor-mlkit/barcode-scanning@next ```
     
     La libreria llamada "barcode-scanning" sirve para el escaneo de QR y codigos de barras. Esta libreria esta vinculada con un archivo 
-    llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar escaneo, salir escaneo, diseños y activación de  linterna entre     otras funciones. Esta libreria se encuentra ubicada en la page: pagina-alumno-3.
+    llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar el escaneo, salir del escaneo, diseños y activación de  linterna entre otras funciones.
   
      
 - (2). ```npm install --save-dev @types/capacitor-camera```
@@ -61,7 +61,10 @@ npx cap sync #Sincroniza los cambios
   
   https://capawesome.io/plugins/mlkit/barcode-scanning/
   
+##  Este fue el proceso de la integración del plugin 
+
 - Se instalo la importación  ``` npm install @capacitor-mlkit/barcode-scanning@next ```
+-  Tambien debes importar ``` npm install --save-dev @types/capacitor-camera ```
 - Y luego sincronizamos los cambios ``` npx ionic cap sync  ```
 
 ## Evidencia del plugin dentro del proyecto
@@ -75,8 +78,13 @@ npx cap sync #Sincroniza los cambios
   Aqui encontramos la comunicación entre las funcionalidades de la página pagina-alumno-3.page.ts y el archivo barcode-scanning-modal.component.ts para utilizarlo con el HTML
   
   <img width="400" alt="evidencia de plugin 3" src="https://github.com/user-attachments/assets/e0dd0cb5-f2bb-4263-ad0a-7877ceeb64e7" />
+  
+Las funciónes del pagina-alumno-3.page.ts integrados al HTML
 
-  Resultado final
+<img width="458" alt="html" src="https://github.com/user-attachments/assets/5e3f340d-7fa1-4d61-b440-880372ae206a" />
+
+
+ Resultado final
   
   <img width="167" alt="evidencia qr 1" src="https://github.com/user-attachments/assets/79eed791-ee96-4080-9a6a-ea460309423a" />
 
@@ -87,24 +95,28 @@ npx cap sync #Sincroniza los cambios
 
 ## Pasos para realizar los testeos
 
-- Identidicar los componentes a los realizaremos un testeo como por ejemplo: Inicio de sesion o Registro de usuario
-
-- Realizaremos 
-
-- (3). Luego iremos al componente o funcionalidad del sistema al cual queremos testear, el archivo debe ser spec.ts
-
-- (4).
-
-- (7). Como ultimo paso ejecutaremos en el terminal de visual Estudio el comando: ``` node testing  ``` y esperaremos los resultados obtenidos del testeo.
+- Se utiliza un servicio para realizar testeos ingresando datos validos y no validos esperando el resultado esperado, en este caso en el archivo auth.service.spec.ts
   
-##Resultado final
+  <img width="572" alt="testeo1" src="https://github.com/user-attachments/assets/885cf400-36a2-49ae-a076-488a2209fbcc" />
 
+- Identidicar los componentes a los realizaremos un testeo como por ejemplo: Inicio de sesion o Registro de usuario. Estos testeos se realizaron en el archivo first-page.page.spec.ts
+  
+  <img width="575" alt="testeo2" src="https://github.com/user-attachments/assets/bd512e5a-a104-4498-a32b-f74be1322c79" />
+
+-  Como ultimo paso ejecutaremos en el terminal de visual Estudio el comando: ``` ng testing  ``` y esperaremos los resultados obtenidos del testeo.
+  
 ![jasmin](https://github.com/user-attachments/assets/8e80f764-ec4b-4130-942f-2fa43101bc62)
+
+## Creación del apk 
+
+
 
 # Firma de la aplicación
 
-- Firma el APK utilizando los comandos correspondientes: ``` keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias  ```
+- Firma el APK utilizando el comandos correspondiente:
+
+ ``` keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias  ```
 
 - Ubicación del archivo generado
   
-<img width="122" alt="firma apk" src="https://github.com/user-    attachments/assets/0350727f-c2cb-4997-ac7c-951e391eed32" />
+<img width="122" alt="firma apk" src="https://github.com/user-    attachments/assets/0350727f-c2cb-4997-ac7c-951e391eed32" /> 
