@@ -55,6 +55,10 @@ npx cap sync #Sincroniza los cambios
 
 <img width="481" alt="state de la api" src="https://github.com/user-attachments/assets/3b4fbffc-9e3c-4794-8399-0396ace3633e" />
 
+- Participación de la api dentro de las paginas
+  
+<img width="494" alt="api" src="https://github.com/user-attachments/assets/ca9429e0-acf4-4546-ad1d-b7481a5f5e86" />
+  
 # Evidencia de la integración del plugin Escaneo de código QR
 
 - Links de referencias: 
@@ -94,21 +98,14 @@ Las funciónes del pagina-alumno-3.page.ts integrados al HTML
 
 
 # Genera APK de acuerdo con los estándares de testing con jasmin y karma.
-- Evidencia de creación del apk
-  
-<img width="208" alt="apk 1" src="https://github.com/user-attachments/assets/634153da-1abd-40c0-9300-47a9dbeacbaa" />
 
-<img width="251" alt="apk 2" src="https://github.com/user-attachments/assets/21e48cfb-29c0-4460-93a1-a33318a1349f" />
-
-<img width="250" alt="apk 3" src="https://github.com/user-attachments/assets/a0e8e26d-2c63-4b3d-b70e-773ca2d875a6" />
-  
 ## Pasos para realizar los testeos
 
 - Se utiliza un servicio para realizar testeos ingresando datos validos y no validos esperando el resultado esperado, en este caso en el archivo auth.service.spec.ts
   
   <img width="572" alt="testeo1" src="https://github.com/user-attachments/assets/885cf400-36a2-49ae-a076-488a2209fbcc" />
 
-- Identidicar los componentes a los que les realizaremos un testeo como por ejemplo: Inicio de sesión o Registro de usuario. Estos testeos se realizaron en el archivo first-page.page.spec.ts
+- Identificar los componentes a los que les realizaremos un testeo como por ejemplo: Inicio de sesión o Registro de usuario. Estos testeos se realizaron en el archivo first-page.page.spec.ts
   
   <img width="575" alt="testeo2" src="https://github.com/user-attachments/assets/bd512e5a-a104-4498-a32b-f74be1322c79" />
 
@@ -118,7 +115,14 @@ Las funciónes del pagina-alumno-3.page.ts integrados al HTML
 
 ## Creación del apk 
 
+- Evidencia de creación del apk
+  
+<img width="208" alt="apk 1" src="https://github.com/user-attachments/assets/634153da-1abd-40c0-9300-47a9dbeacbaa" />
 
+<img width="251" alt="apk 2" src="https://github.com/user-attachments/assets/21e48cfb-29c0-4460-93a1-a33318a1349f" />
+
+<img width="250" alt="apk 3" src="https://github.com/user-attachments/assets/a0e8e26d-2c63-4b3d-b70e-773ca2d875a6" />
+  
 
 # Firma de la aplicación
 
