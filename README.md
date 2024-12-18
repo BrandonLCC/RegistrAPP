@@ -4,28 +4,33 @@
 
 - (1). node.js 
 - (2). Ionic_CLI
-- (3)  Realizar Clone al repositorio y luego instala las dependencias (Ver los pasos al final)
+- (3)  Realizar git clone al repositorio y luego instala las dependencias
   
 ```bash
-git clone NombreRepositorio o src
+git clone https://github.com/BrandonLCC/RegistrAPP.git o  descarga del src
 
+npm install  #Instalar dependencias
+
+#Importaciónes necesarias
+npm install @capacitor-mlkit/barcode-scanning@next o npm install --save-dev @types/capacitor-mlkit-barcode-scanning
+npm install --save-dev @types/capacitor-camera
+
+#Forzar cambios en caso de fallo
 Remove-Item -Path .\node_modules -Recurse -Force #Eliminar estos archivos obligadamente  
 Remove-Item -Path .\package-lock.json -Force 
 
-npm install  #Instalar dependencias
 npx cap sync #Sincroniza los cambios 
 ```
   
-- (4). Entrar en la carpeta PcMax y Ejecutar el proyecto con: ```ionic serve```
+- (4). Entrar en la carpeta con ``` cd PcMax ``` y Ejecutar el proyecto con: ``` ionic serve ```
 - (5). Ejecutar el archivo en una terminal aparte del visual estudio utilizando este comando:  ``` node database.js ``` para activar la base de datos
-- (6) Resultado abtenido al ejecutar el comando:  ```  node database.js
-                                          Servidor en ejecución en http://localhost:3000 ``` 
+- Resultado obtenido:  ``` node database.js Servidor en ejecución en http://localhost:3000 ``` 
 
 # Librerias del proyecto
-- (1). Para instalar la liberia sebes ejecutar este comando dentro del visual estudio: ```npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
+- (1). Para instalar la liberia sebes ejecutar este comando dentro del visual estudio: ```  npm install @capacitor-mlkit/barcode-scanning@next ```
     
     La libreria llamada "barcode-scanning" sirve para el escaneo de QR y codigos de barras. Esta libreria esta vinculada con un archivo 
-    llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar escaneo, salir escaneo, diseños y activar linterna entre            otras funciones. Esta libreria se encuentra ubicada en la page: pagina-alumno-3.
+    llamado barcode-scanning-modal.component.ts. Este es un modal con diferentes funcionalidades como iniciar escaneo, salir escaneo, diseños y activación de  linterna entre     otras funciones. Esta libreria se encuentra ubicada en la page: pagina-alumno-3.
   
      
 - (2). ```npm install --save-dev @types/capacitor-camera```
@@ -38,29 +43,25 @@ npx cap sync #Sincroniza los cambios
 
   Esta API se encuentra en un servicio el cual se comunica con los demas componetes de la aplicación movil.
   
-## Conexión
-<img width="418" alt="Evidencia randomUser 1" src="https://github.com/user-attachments/assets/49ccbf5b-ae1a-4717-b9c2-7a9d1de9a448" />
-## Consultas síncronas y/o asíncronas
-<img width="461" alt="funcion asinc" src<img width="461" alt="funcion asinc" src="https://github.com/user-attachments/assets/821b8eab-785b-422e-9599-bf67bacd814b" />
+## Conexión y Consultas síncronas y/o asíncronas
+
+  <img width="418" alt="Evidencia randomUser 1" src="https://github.com/user-attachments/assets/49ccbf5b-ae1a-4717-b9c2-7a9d1de9a448" />
+
+  <img width="461" alt="funcion asinc" src<img width="461" alt="funcion asinc" src="https://github.com/user-attachments/assets/821b8eab-785b-422e-9599-bf67bacd814b" />
 
 ## Manejo de  las respuestas de manera estructurada y eficiente.
 
 
-# Evidencia de la integración del plugin
-
-## Evidencia de la integración del plugin Escaneo de codigo QR
+# Evidencia de la integración del plugin Escaneo de código QR
 
 - Links de referencias: 
 
   https://www.youtube.com/watch?v=dhTLpXuYGOI
+  
   https://capawesome.io/plugins/mlkit/barcode-scanning/
   
-- Primero deberemos instalar la importación  ```npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
-- Y luego simcronizamos los cambios ```npx ionic cap sync  ```
-
-- Permisos: 
-<uses-permission android:name="android.permission.CAMERA" />
-<uses-permission android:name="android.permission.FLASHLIGHT"/>
+- Se instalo la importación  ``` npm install @capacitor-mlkit/barcode-scanning@next ```
+- Y luego sincronizamos los cambios ``` npx ionic cap sync  ```
 
 # Genera APK de acuerdo con los estándares de testing
 
