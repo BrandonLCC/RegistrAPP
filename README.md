@@ -66,7 +66,7 @@ npx cap sync #Sincroniza los cambios
 ## Evidencia del plugin dentro del proyecto
   
   <img width="400" alt="evidencia plugin " src="https://github.com/user-attachments/assets/808ca613-0a93-429a-8ba0-36f004088beb" />
-  
+##
   <img width="400" alt="evidencia plugin 2" src="https://github.com/user-attachments/assets/1c15b53a-0958-4cd1-b798-17208e7c779f" />
   
   <img width="400" alt="evidencia de plugin 3" src="https://github.com/user-attachments/assets/e0dd0cb5-f2bb-4263-ad0a-7877ceeb64e7" />
