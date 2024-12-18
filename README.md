@@ -40,6 +40,7 @@ npx cap sync #Sincroniza los cambios
     PD: Probablemente pueda dar errores de dependencias o vulnerabilidades por lo que debes seguir el paso 3 para instalar el proyecto correctamente.
 
 # Evidencia del consumo de API RandomUser
+- Link de la api: https://randomuser.me/
 
   Esta API se encuentra en un servicio el cual se comunica con los demas componetes de la aplicación movil.
   
@@ -69,7 +70,7 @@ npx cap sync #Sincroniza los cambios
 
 ## Evidencia del plugin dentro del proyecto
 
-  El archivo barcode-scanning-modal.component.ts es un modal que podemos   descargar y implementar en el proyecto
+  El archivo barcode-scanning-modal.component.ts es un modal que podemos descargar y implementar en el proyecto
   
   <img width="400" alt="evidencia plugin " src="https://github.com/user-attachments/assets/808ca613-0a93-429a-8ba0-36f004088beb" />
 
@@ -99,7 +100,7 @@ Las funciónes del pagina-alumno-3.page.ts integrados al HTML
   
   <img width="572" alt="testeo1" src="https://github.com/user-attachments/assets/885cf400-36a2-49ae-a076-488a2209fbcc" />
 
-- Identidicar los componentes a los realizaremos un testeo como por ejemplo: Inicio de sesion o Registro de usuario. Estos testeos se realizaron en el archivo first-page.page.spec.ts
+- Identidicar los componentes a los que les realizaremos un testeo como por ejemplo: Inicio de sesión o Registro de usuario. Estos testeos se realizaron en el archivo first-page.page.spec.ts
   
   <img width="575" alt="testeo2" src="https://github.com/user-attachments/assets/bd512e5a-a104-4498-a32b-f74be1322c79" />
 
@@ -119,4 +120,4 @@ Las funciónes del pagina-alumno-3.page.ts integrados al HTML
 
 - Ubicación del archivo generado
   
-<img width="122" alt="firma apk" src="https://github.com/user-    attachments/assets/0350727f-c2cb-4997-ac7c-951e391eed32" /> 
+<img width="122" alt="firma apk" src="https://github.com/user-attachments/assets/f93fb677-6555-44da-84a1-cbb759870c86" />
