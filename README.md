@@ -29,27 +29,38 @@ npx cap sync #Sincroniza los cambios
   
      
 - (2). ```npm install --save-dev @types/capacitor-camera```
+  
     La libreria llamada "capacitor-camera" Nos permite acceder a la camara de los dispositivos moviles. 
     
     PD: Probablemente pueda dar errores de dependencias o vulnerabilidades por lo que debes seguir el paso 3 para instalar el proyecto correctamente.
 
-# Evidencia del consumo de API 
-- (1). Api utilizada: RandomUser
-    Esta API se encuentra en un servicio el cual se comunica con los demas componetes de la aplicación movil.
+# Evidencia del consumo de API RandomUser
 
+  Esta API se encuentra en un servicio el cual se comunica con los demas componetes de la aplicación movil.
+  
+## Conexión
+<img width="418" alt="Evidencia randomUser 1" src="https://github.com/user-attachments/assets/49ccbf5b-ae1a-4717-b9c2-7a9d1de9a448" />
 ## Consultas síncronas y/o asíncronas
 <img width="461" alt="funcion asinc" src<img width="461" alt="funcion asinc" src="https://github.com/user-attachments/assets/821b8eab-785b-422e-9599-bf67bacd814b" />
-="https://github.com/user-attachments/assets/2330628c-afb1-45c5-876e-fc4932f50fdf" />
 
-
-
-
-
-
+## Manejo de  las respuestas de manera estructurada y eficiente.
 
 
 # Evidencia de la integración del plugin
 
+## Evidencia de la integración del plugin Escaneo de codigo QR
+
+- Links de referencias: 
+
+  https://www.youtube.com/watch?v=dhTLpXuYGOI
+  https://capawesome.io/plugins/mlkit/barcode-scanning/
+  
+- Primero deberemos instalar la importación  ```npm install --save-dev @types/capacitor-mlkit-barcode-scanning ```
+- Y luego simcronizamos los cambios ```npx ionic cap sync  ```
+
+- Permisos: 
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.FLASHLIGHT"/>
 
 # Genera APK de acuerdo con los estándares de testing
 
@@ -57,10 +68,10 @@ npx cap sync #Sincroniza los cambios
 
 ## Pasos para realizar los testeos
 - (1). Identidicar los componentes a los realizaremos un testeo como por ejemplo: Inicio de sesion o Registro de usuario
-- (2). Realizaremos testeos desde un servicio como por ejemplo: auth.service.spec.ts para...
+- (2). Realizaremos testeos desd<img width="481" alt="state de la api" src="https://github.com/user-attachments/assets/3b4fbffc-9e3c-4794-8399-0396ace3633e" />
+e un servicio como por ejemplo: auth.service.spec.ts para...
 - (img)
 - (3). Luego iremos al componente o funcionalidad del sistema al cual queremos testear, el archivo debe ser spec.ts
-<img width="524" alt="evidencia <img width="527" alt="testeo evidencia 2" src="https://github.com/user-attachments/assets/d8379cd5-cb4d-47b5-b5c8-a80080cce1f9" />
 
 - (4).
 
