@@ -10,7 +10,7 @@
 git clone https://github.com/BrandonLCC/RegistrAPP.git o descarga del src
 
 npm install  #Instalar dependencias
-
+ 
 #Importaciónes necesarias
 npm install @capacitor-mlkit/barcode-scanning@next 
 npm install --save-dev @types/capacitor-camera
